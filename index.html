@@ -33,10 +33,31 @@
 
     <hr>
 
-    <div id="results"></div>
+    <div id="results">
+
+    </div>
 
     <!-- Your Code Here -->
     <!-- You should start doing handlebar stuff here -->
+    <script type="text/x-handlebars-template" id="apartment-template">
+        {{#if apartments}}
+        {{#each apartments}}
+        <div class="result">
+            <img src={{img}}> <div class="l-addr">Address:</div> <div class="address">{{address}}</div>
+            <div class="l-price">Price:</div> <div class="price">{{price}}</div>
+            <div class="l-rooms">Number of rooms:</div> <div class="rooms">{{rooms}}</div>
+            <div class="l-park"></div>
+            <div class="parking">{{#if parking}} <i class="fas fa-parking"></i> {{/if}}</div>
+            <div class="l-immediate">{{#if immediate}}Contact Details : {{/if}} </div> <div class="immediate"> {{#if immediate}}{{contactDetails.name}} - {{contactDetails.email}} {{/if}}</div>
+        </div>
+        {{/each}}
+        {{else}}
+            <div class="result">
+                There are no apartments with these results.
+            </div>
+        {{/if}}
+
+    </script>
     <!-- Your Code Here -->
 
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
